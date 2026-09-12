@@ -128,7 +128,16 @@ setBudgetOpen(false)
                     <small>YOUR WEBSITE</small>
                     <h2>用创意构建更好的未来</h2>
                     <p>让好的设计帮助你的想法被更多人看到。</p>
-                    <button>了解更多 →</button>
+                    <button
+  type="button"
+  onClick={() => {
+    document
+      .getElementById('services')
+      ?.scrollIntoView({ behavior: 'smooth' })
+  }}
+>
+  了解更多 →
+</button>
                   </div>
 
                   <div className="preview-art">
