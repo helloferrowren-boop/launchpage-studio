@@ -461,7 +461,6 @@ async function handleSubmit(e) {
     </div>
   </div>
 </section>
-
 <section className="contact-section" id="contact">
   <div className="container">
     <div className="contact-box">
@@ -476,55 +475,60 @@ async function handleSubmit(e) {
         </div>
 
         <form
-  className="contact-form"
-  onSubmit={handleSubmit}
->
-  {selectedPlan && (
-  <label>
-    已选择套餐
-    <input
-      type="text"
-      name="plan"
-      value={selectedPlan}
-      readOnly
-    />
-  </label>
-)}
+          className="contact-form"
+          onSubmit={handleSubmit}
+        >
+          {selectedPlan && (
+            <label>
+              已选择套餐
+              <input
+                type="text"
+                name="plan"
+                value={selectedPlan}
+                readOnly
+              />
+            </label>
+          )}
+
           <div className="form-row">
             <label>
               姓名
               <input
-  type="text"
-  name="name"
-  placeholder="例如：张三"
-  required
-/>
+                type="text"
+                name="name"
+                placeholder="例如：张三"
+                required
+              />
             </label>
 
             <label>
               联系方式
               <input
-  type="text"
-  name="contact"
-  placeholder="微信 / QQ / 邮箱"
-  required
-/>
+                type="text"
+                name="contact"
+                placeholder="微信 / QQ / 邮箱"
+                required
+              />
             </label>
           </div>
 
           <label>
             想做什么
             <textarea
-  name="request"
-  rows="5"
-  placeholder="例如：我想做一个展示摄影作品的个人网站……"
-  required
-/>
+              name="request"
+              rows="5"
+              placeholder="例如：我想做一个展示摄影作品的个人网站……"
+              required
+            />
           </label>
 
           <label>
             预算
-            <select name="budget" defaultValue="" required>
+            <select
+              name="budget"
+              defaultValue=""
+              required
+            >
               <option value="" disabled>
                 请选择预算范围
               </option>
@@ -537,24 +541,24 @@ async function handleSubmit(e) {
           </label>
 
           <button
-  className="submit-button"
-  type="submit"
-  disabled={isSubmitting}
->
-  {isSubmitting ? '提交中...' : '提交需求'}
-</button>
+            className="submit-button"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? '提交中...' : '提交需求'}
+          </button>
 
           {formStatus === 'success' && (
-  <p className="form-success">
-    ✓ 提交成功，我们收到需求后会尽快联系你。
-  </p>
-)}
+            <p className="form-success">
+              ✓ 提交成功，我们收到需求后会尽快联系你。
+            </p>
+          )}
 
-{formStatus === 'error' && (
-  <p className="form-error">
-    提交失败，请稍后重试，或者直接发送邮件联系我们。
-  </p>
-)}
+          {formStatus === 'error' && (
+            <p className="form-error">
+              提交失败，请稍后重试，或者直接发送邮件联系我们。
+            </p>
+          )}
         </form>
       </div>
 
@@ -564,30 +568,15 @@ async function handleSubmit(e) {
         </p>
 
         <div className="contact-item">
-  <div className="contact-icon">✉</div>
-  <div>
-    <strong>邮箱</strong>
-    <p>
-      <a href="mailto:launchpagestudio@163.com">
-        launchpagestudio@163.com
-      </a>
-    </p>
-  </div>
-</div>
+          <div className="contact-icon">✉</div>
 
-        <div className="contact-item">
-          <div className="contact-icon">微</div>
           <div>
-            <strong>微信</strong>
-            <p>正式上线前添加微信号或二维码</p>
-          </div>
-        </div>
-
-        <div className="contact-item">
-          <div className="contact-icon">&lt;/&gt;</div>
-          <div>
-            <strong>GitHub</strong>
-            <p>后续可以展示项目与 Demo</p>
+            <strong>邮箱</strong>
+            <p>
+              <a href="mailto:launchpagestudio@163.com">
+                launchpagestudio@163.com
+              </a>
+            </p>
           </div>
         </div>
       </aside>
