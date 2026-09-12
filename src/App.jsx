@@ -84,7 +84,7 @@ setBudgetOpen(false)
               </h1>
 
               <p className="hero-subtitle">
-  个人主页 ¥99 起 · 小型官网 ¥299 起
+  个人展示页 ¥199 起 · 标准展示官网 ¥499 起
 </p>
 
               <p className="hero-description">
@@ -161,24 +161,37 @@ setBudgetOpen(false)
             <div className="service-grid">
               <article className="service-card">
                 <div className="service-icon">👤</div>
-                <h3>个人主页 / 作品集</h3>
-                <div className="price">¥99 <small>起</small></div>
+                <h3>个人展示页 / 作品集</h3>
+<div className="price">¥199 <small>起</small></div>
+<div className="pricing-result">
+  交付一个可直接访问的完整个人网站
+</div>
                 <p>适合学生、程序员、摄影师、设计师</p>
               </article>
 
               <article className="service-card">
                 <div className="service-icon green">▣</div>
-                <h3>小型展示官网</h3>
-                <div className="price">¥299 <small>起</small></div>
+                <h3>标准展示官网</h3>
+<div className="price">¥499 <small>起</small></div>
+<div className="pricing-result">
+  交付一个可用于正式对外展示的完整官网
+</div>
                 <p>适合工作室、小商家、个人品牌</p>
               </article>
 
               <article className="service-card">
-                <div className="service-icon purple">&lt;/&gt;</div>
-                <h3>网站修改 / 上线</h3>
-                <div className="price">¥49 <small>起</small></div>
-                <p>适合已有网站或 GitHub 项目</p>
-              </article>
+  <div className="service-icon purple">&lt;/&gt;</div>
+
+  <h3>网站修改 / GitHub 项目维护</h3>
+
+  <div className="price">
+    ¥99 <small>起</small>
+  </div>
+
+  <p>
+    前端样式、小功能、Bug 修复、构建与部署排错
+  </p>
+</article>
             </div>
           </div>
         </section>
@@ -191,83 +204,114 @@ setBudgetOpen(false)
 
     <div className="pricing-grid">
       <article className="pricing-card">
-        <h3>个人主页</h3>
-        <p className="pricing-desc">适合个人展示与作品集</p>
+  <h3>个人展示页</h3>
+  <p className="pricing-desc">
+    适合学生、开发者、设计师和自由职业者
+  </p>
 
-        <div className="pricing-price">
-          ¥99 <small>起</small>
-        </div>
+  <div className="pricing-price">
+    ¥199 <small>起</small>
+  </div>
 
-        <ul>
-          <li>✓ 1 个页面</li>
-          <li>✓ 手机 + 电脑适配</li>
-          <li>✓ 个人介绍</li>
-          <li>✓ 项目展示</li>
-          <li>✓ 1 次修改</li>
-        </ul>
+  <ul>
+    <li>✓ 1 个完整页面</li>
+    <li>✓ 手机 + 电脑适配</li>
+    <li>✓ 个人介绍与联系方式</li>
+    <li>✓ 项目 / 作品展示</li>
+    <li>✓ 基础 SEO 设置</li>
+    <li>✓ 网站部署上线</li>
+    <li>✓ 1 次套餐内修改</li>
+  </ul>
 
-        <button
-  className="pricing-button"
-  type="button"
-  onClick={() => choosePlan('个人主页 ¥99 起')}
->
-  选择这个套餐
-</button>
-      </article>
+  <button
+    className="pricing-button"
+    type="button"
+    onClick={() => choosePlan('个人展示页 ¥199 起')}
+  >
+    选择这个套餐
+  </button>
+</article>
 
       <article className="pricing-card featured">
-        <div className="popular-badge">最受欢迎</div>
+  <div className="popular-badge">推荐</div>
 
-        <h3>展示网站</h3>
-        <p className="pricing-desc">适合工作室、小商家、个人品牌</p>
+  <h3>标准展示官网</h3>
+  <p className="pricing-desc">
+    适合工作室、小商家和个人品牌
+  </p>
 
-        <div className="pricing-price">
-          ¥299 <small>起</small>
-        </div>
+  <div className="pricing-price">
+    ¥499 <small>起</small>
+  </div>
 
-        <ul>
-          <li>✓ 1–5 个页面</li>
-          <li>✓ 手机 + 电脑适配</li>
-          <li>✓ 服务介绍</li>
-          <li>✓ 案例展示</li>
-          <li>✓ 联系方式</li>
-          <li>✓ 2 次修改</li>
-        </ul>
+  <ul>
+    <li>✓ 1–5 个完整页面</li>
+    <li>✓ 手机 + 电脑适配</li>
+    <li>✓ 首页 / 服务 / 案例 / 关于 / 联系</li>
+    <li>✓ 联系表单</li>
+    <li>✓ 基础 SEO 设置</li>
+    <li>✓ 域名绑定协助</li>
+    <li>✓ 网站部署上线</li>
+    <li>✓ 基础文案排版协助</li>
+    <li>✓ 2 次套餐内修改</li>
+  </ul>
 
-        <button
-  className="pricing-button primary"
-  type="button"
-  onClick={() => choosePlan('展示网站 ¥299 起')}
->
-  选择这个套餐
-</button>
-      </article>
+  <button
+    className="pricing-button primary"
+    type="button"
+    onClick={() => choosePlan('标准展示官网 ¥499 起')}
+  >
+    选择这个套餐
+  </button>
+</article>
 
       <article className="pricing-card">
-        <h3>定制需求</h3>
-        <p className="pricing-desc">有特殊需求？先聊聊你的想法</p>
+  <h3>品牌展示官网</h3>
 
-        <div className="pricing-price custom-price">
-          单独报价
-        </div>
+  <p className="pricing-desc">
+    适合对品牌形象、内容呈现和设计质感要求更高的客户
+  </p>
 
-        <ul>
-          <li>✓ 根据功能评估</li>
-          <li>✓ 上线支持</li>
-          <li>✓ 页面拓展</li>
-          <li>✓ 内容协助</li>
-          <li>✓ 长期合作可谈</li>
-        </ul>
+  <div className="pricing-price">
+    ¥899 <small>起</small>
+  </div>
 
-        <button
-  className="pricing-button"
-  type="button"
-  onClick={() => choosePlan('定制需求')}
->
-  联系我们
-</button>
-      </article>
+  <ul>
+    <li>✓ 3–6 个完整页面</li>
+    <li>✓ 专属视觉方向与页面风格</li>
+    <li>✓ 首页重点区域精细设计</li>
+    <li>✓ 手机 + 电脑适配</li>
+    <li>✓ 内容结构与信息层级梳理</li>
+    <li>✓ 服务 / 案例 / FAQ / 联系表单</li>
+    <li>✓ 图片与文案排版优化</li>
+    <li>✓ 基础 SEO 设置</li>
+    <li>✓ 域名绑定与部署上线</li>
+    <li>✓ 3 次套餐内修改</li>
+    <li>✓ 上线后 7 天基础问题支持</li>
+  </ul>
+
+  <button
+    className="pricing-button"
+    type="button"
+    onClick={() => choosePlan('品牌展示官网 ¥899 起')}
+  >
+    选择这个套餐
+  </button>
+</article>
     </div>
+    <div className="pricing-note">
+  <strong>服务范围说明</strong>
+
+  <p>
+    以上套餐主要适用于个人主页、作品集、工作室和品牌展示类网站。
+    如需预约、支付、会员、后台管理等扩展功能，可先评估后单独报价。
+  </p>
+
+  <p>
+    域名及第三方付费服务按实际费用承担。
+    超出套餐页面数量或新增功能，会在制作前确认费用后再开始。
+  </p>
+</div>
   </div>
 </section>
 <section className="cases-section" id="cases">
@@ -402,39 +446,51 @@ setBudgetOpen(false)
 <section className="process-section">
   <div className="container">
     <div className="section-heading">
-      <h2>服务流程</h2>
-      <p>简单 5 步，把你的想法变成可以访问的网站。</p>
+      <h2>从需求到上线，只需 5 步</h2>
+      <p>
+        制作内容、费用和修改范围都会提前确认，流程简单透明。
+      </p>
     </div>
 
     <div className="process-grid">
       <div className="process-step">
         <div className="step-number">1</div>
-        <h3>告诉我们需求</h3>
-        <p>简单描述你想做的网站、风格和用途。</p>
+        <h3>提交需求</h3>
+        <p>
+          告诉我们网站用途、喜欢的风格、需要的页面和参考网站。
+        </p>
       </div>
 
       <div className="process-step">
         <div className="step-number">2</div>
-        <h3>确认价格和内容</h3>
-        <p>我们评估需求，确认制作内容和报价。</p>
+        <h3>确认方案与报价</h3>
+        <p>
+          明确制作范围、价格和预计时间，确认后支付定金开始制作。
+        </p>
       </div>
 
       <div className="process-step">
         <div className="step-number">3</div>
         <h3>制作第一版</h3>
-        <p>开始设计和开发，并提供第一版预览。</p>
+        <p>
+          完成页面设计与开发，提供可以直接查看的第一版网站。
+        </p>
       </div>
 
       <div className="process-step">
         <div className="step-number">4</div>
-        <h3>提出修改</h3>
-        <p>根据你的反馈，对页面进行调整。</p>
+        <h3>修改与确认</h3>
+        <p>
+          根据套餐内的修改次数调整内容，直到确认最终版本。
+        </p>
       </div>
 
       <div className="process-step">
         <div className="step-number">5</div>
-        <h3>网站上线</h3>
-        <p>确认完成后部署上线，并交付使用。</p>
+        <h3>尾款与正式上线</h3>
+        <p>
+          确认成品后结清尾款，完成域名绑定、部署上线和最终交付。
+        </p>
       </div>
     </div>
   </div>
@@ -443,41 +499,146 @@ setBudgetOpen(false)
   <div className="container">
     <div className="section-heading">
       <h2>常见问题</h2>
-      <p>第一次做网站？这些可能是你最关心的问题。</p>
+      <p>第一次做网站？这些是客户最常问的几个问题。</p>
     </div>
 
     <div className="faq-grid">
-      <details>
+      <details className="faq-item">
         <summary>多久能做好？</summary>
         <p>
-          简单个人主页通常 1～3 天可以完成第一版，
-          展示型网站一般需要 3～7 天，具体根据需求确定。
+          一般个人展示页大约 2–4 天，标准展示官网约 4–7 天，
+          品牌展示官网通常 7–10 天左右。具体时间会根据页面数量、
+          资料准备情况和修改次数确认。
         </p>
       </details>
 
-      <details>
+      <details className="faq-item">
         <summary>域名需要自己买吗？</summary>
         <p>
-          可以自己购买。如果你不熟悉域名，我们也可以协助完成选择、
-          解析和网站绑定。
+          可以自己购买，也可以先告诉我们你想用的域名名称，
+          我们协助你完成购买和绑定。域名费用按实际平台价格计算，
+          不包含在套餐内。
         </p>
       </details>
 
-      <details>
+      <details className="faq-item">
         <summary>可以帮我把网站上线吗？</summary>
         <p>
-          可以。我们可以协助部署到合适的平台，
-          并完成域名绑定和基础上线配置。
+          可以。我们会协助你完成部署上线、域名绑定和基础访问检查，
+          让网站可以正式对外打开访问。
         </p>
       </details>
 
-      <details>
-        <summary>可以做商城或者复杂系统吗？</summary>
+      <details className="faq-item">
+        <summary>可以做商城或者会员系统吗？</summary>
         <p>
-          目前主要提供个人主页、作品集和小型展示网站。
-          商城、复杂后台和大型系统暂时不作为标准服务。
+          当前套餐主要面向展示型网站。如果你需要预约、支付、会员、
+          后台管理等扩展功能，可以先把需求发给我们，我们会先评估，
+          再决定是否单独报价制作。
         </p>
       </details>
+
+      <details className="faq-item">
+        <summary>怎么付款？</summary>
+        <p>
+          确认需求、制作范围和报价后支付定金开始制作。
+          第一版完成并按约定修改确认后，再结清尾款并正式上线。
+          具体付款方式会在制作前确认。
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>套餐里的修改怎么算？</summary>
+        <p>
+          文字、图片、颜色和局部排版调整通常属于套餐内修改。
+          如果中途新增页面、改变整体结构或增加新功能，
+          会先说明新增费用，确认后再继续制作。
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>做网站前需要准备什么？</summary>
+        <p>
+          你只需要提供网站用途、名称、介绍文字、联系方式、图片素材，
+          以及你喜欢的参考网站即可。如果暂时没有完整文案，
+          我们也可以协助整理页面内容结构。
+        </p>
+      </details>
+
+      <details className="faq-item">
+        <summary>不会技术也能做吗？</summary>
+        <p>
+          可以。你不用懂代码，只要把需求、资料和想法告诉我们，
+          我们会负责设计、制作、适配和上线，尽量让整个过程简单清楚。
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+<section className="trust-section">
+  <div className="container">
+    <div className="section-heading trust-heading">
+      <span className="trust-eyebrow">WHY LAUNCHPAGE</span>
+
+      <h2>第一次做网站，也可以很简单</h2>
+
+      <p>
+        我们把需求、制作、修改和上线拆成清楚的步骤，
+        让你不用懂代码，也能知道网站正在做到哪一步。
+      </p>
+    </div>
+
+    <div className="trust-grid">
+      <article className="trust-card">
+        <div className="trust-card-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+        </div>
+
+        <h3>制作前先确认</h3>
+
+        <p>
+          页面数量、功能范围、价格和预计时间都会提前沟通，
+          确认后再开始制作。
+        </p>
+      </article>
+
+      <article className="trust-card">
+        <div className="trust-card-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16" />
+            <path d="M7 3v4M17 3v4" />
+            <rect x="4" y="5" width="16" height="16" rx="3" />
+            <path d="m8 14 2.5 2.5L16 11" />
+          </svg>
+        </div>
+
+        <h3>过程可以预览</h3>
+
+        <p>
+          第一版完成后先给你查看效果，再根据套餐范围进行修改，
+          不需要等到上线才知道结果。
+        </p>
+      </article>
+
+      <article className="trust-card">
+        <div className="trust-card-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12" />
+            <path d="m8 11 4 4 4-4" />
+            <path d="M5 19h14" />
+          </svg>
+        </div>
+
+        <h3>从制作到上线</h3>
+
+        <p>
+          不只交给你一份代码，还会协助完成部署、域名绑定和上线检查，
+          让网站真正可以访问。
+        </p>
+      </article>
     </div>
   </div>
 </section>

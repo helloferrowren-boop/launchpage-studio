@@ -1856,3 +1856,263 @@
 
   z-index: auto;
 }
+.pricing-note {
+  margin-top: 28px;
+  padding: 22px 24px;
+
+  border: 1px solid #dce8ff;
+  border-radius: 18px;
+
+  background: #f7faff;
+}
+
+.pricing-note strong {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #183b7a;
+  font-size: 15px;
+}
+
+.pricing-note p {
+  margin: 6px 0;
+
+  color: #66758f;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.pricing-result {
+  margin: 14px 0 18px;
+  padding: 11px 13px;
+
+  border-radius: 12px;
+  background: #f4f7ff;
+
+  color: #526683;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.pricing-card.featured .pricing-result {
+  background: #edf4ff;
+  color: #315ca8;
+}
+.faq-section {
+  padding: 90px 0 100px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.faq-grid {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.faq-item {
+  border: 1px solid #dfe8f7;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  border-color: #cdddf8;
+  box-shadow: 0 22px 45px rgba(37, 99, 235, 0.10);
+}
+
+.faq-item[open] {
+  border-color: #b9d0fb;
+  box-shadow: 0 24px 50px rgba(37, 99, 235, 0.12);
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 24px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+  background: #eff5ff;
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 26px 24px;
+  border-top: 1px solid #edf2fb;
+
+  color: #5f6f86;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.faq-item[open] p {
+  padding-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-section {
+    padding: 70px 0 80px;
+  }
+
+  .faq-item summary {
+    padding: 20px 18px;
+    font-size: 16px;
+  }
+
+  .faq-item p {
+    padding: 0 18px 20px;
+    font-size: 13px;
+  }
+
+  .faq-item[open] p {
+    padding-top: 16px;
+  }
+}
+.trust-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.trust-heading {
+  max-width: 720px;
+  margin-bottom: 38px;
+}
+
+.trust-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: #5683e8;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.trust-card {
+  padding: 30px;
+
+  border: 1px solid #e2eaf8;
+  border-radius: 22px;
+
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+
+  box-shadow:
+    0 18px 45px rgba(30, 64, 120, 0.06);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-4px);
+  border-color: #c9daf8;
+
+  box-shadow:
+    0 24px 55px rgba(37, 99, 235, 0.10);
+}
+
+.trust-card-icon {
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 22px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+
+  background: #edf4ff;
+  color: #326de1;
+}
+
+.trust-card-icon svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trust-card h3 {
+  margin: 0 0 12px;
+
+  color: #0d1738;
+  font-size: 19px;
+}
+
+.trust-card p {
+  margin: 0;
+
+  color: #66758f;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+@media (max-width: 800px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-section {
+    padding: 70px 0;
+  }
+}
