@@ -5,6 +5,9 @@ function App() {
   const [formStatus, setFormStatus] = useState('')
 const [isSubmitting, setIsSubmitting] = useState(false)
 const [selectedPlan, setSelectedPlan] = useState('')
+const [requestText, setRequestText] = useState('')
+const [budget, setBudget] = useState('')
+const [budgetOpen, setBudgetOpen] = useState(false)
 
 async function handleSubmit(e) {
   e.preventDefault()
@@ -27,6 +30,8 @@ async function handleSubmit(e) {
     if (response.ok) {
       setFormStatus('success')
       form.reset()
+      setBudget('')
+setBudgetOpen(false)
     } else {
       setFormStatus('error')
     }
@@ -472,13 +477,24 @@ async function handleSubmit(e) {
     <div className="contact-box">
 
       <div className="contact-main">
-        <div className="section-heading">
-          <h2>有想法？把需求发给我们看看。</h2>
-          <p>
-            不需要懂技术，告诉我们你想做什么就可以。
-            我们会先了解需求，再确认是否适合以及大概费用。
-          </p>
-        </div>
+        <div className="section-heading contact-heading">
+  <div className="contact-eyebrow">
+    LET&apos;S BUILD TOGETHER
+    <span></span>
+  </div>
+
+  <h2>
+    有想法？
+    <span className="contact-title-blue">
+      把需求发给我们看看。
+    </span>
+  </h2>
+
+  <p>
+    不需要懂技术，告诉我们你想做什么就可以。
+    我们会先了解需求，再确认是否适合以及大概费用。
+  </p>
+</div>
 
         <form
   className="contact-form"
@@ -498,64 +514,156 @@ async function handleSubmit(e) {
 
   <div className="form-row">
     <label>
-      姓名
-      <input
-        type="text"
-        name="name"
-        placeholder="例如：张三"
-        required
-      />
-    </label>
+  姓名
+
+  <div className="contact-input-wrap">
+    <span className="contact-input-icon">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+    <path d="M4.5 21a7.5 7.5 0 0 1 15 0" />
+  </svg>
+</span>
+
+    <input
+      type="text"
+      name="name"
+      placeholder="例如：张三"
+      required
+    />
+  </div>
+</label>
+</div>
 
     <label>
-      手机号或邮箱
-      <input
-        type="text"
-        name="contact"
-        placeholder="例如：13800138000 或 name@example.com"
-        pattern="(?:1[3-9][0-9]{9}|[^@ ]+@[^@ ]+[.][^@ ]+)"
-        title="请输入正确的中国大陆手机号（11位）或邮箱地址"
-        required
-      />
-    </label>
+手机号或邮箱
+
+
+  <div className="contact-input-wrap">
+    <span className="contact-input-icon">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="m4 7 8 6 8-6" />
+  </svg>
+</span>
+
+    <input
+      type="text"
+      name="contact"
+      placeholder="例如：13800138000 或 name@example.com"
+      pattern="(?:1[3-9][0-9]{9}|[^@ ]+@[^@ ]+[.][^@ ]+)"
+      title="请输入正确的中国大陆手机号（11位）或邮箱地址"
+      required
+    />
   </div>
-          
-
-          
-
-          <label>
+</label>
+  <label>
   想做什么
-  <textarea
-    name="request"
-    rows="5"
-    minLength="10"
-    placeholder="例如：我想做一个展示摄影作品的个人网站……"
-    required
-  />
+
+  <div className="contact-textarea-wrap">
+    <span className="contact-textarea-icon">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6 3h8l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+    <path d="M14 3v5h5" />
+    <path d="M8 13h8" />
+    <path d="M8 17h6" />
+  </svg>
+</span>
+
+    <textarea
+      name="request"
+      rows="5"
+      minLength="10"
+      maxLength="500"
+      placeholder="例如：我想做一个展示摄影作品的个人网站……"
+      value={requestText}
+      onChange={(e) => setRequestText(e.target.value.slice(0, 500))}
+      required
+    />
+
+    <span className="char-count">
+      {requestText.length}/500
+    </span>
+  </div>
 </label>
 
-          <label>
-            预算
-            <select
-              name="budget"
-              defaultValue=""
-              required
-            >
-              <option value="" disabled>
-                请选择预算范围
-              </option>
-              <option>¥100 以下</option>
-              <option>¥100～299</option>
-              <option>¥300～599</option>
-              <option>¥600 以上</option>
-              <option>暂时不确定</option>
-            </select>
-          </label>
+
+          <label className="budget-field">
+  预算
+
+  <div className="custom-select">
+    <button
+      type="button"
+      className={`custom-select-trigger ${budgetOpen ? 'is-open' : ''} ${
+        budget ? 'has-value' : ''
+      }`}
+      onClick={() => setBudgetOpen(!budgetOpen)}
+      aria-haspopup="listbox"
+      aria-expanded={budgetOpen}
+    >
+      <span className="custom-select-left">
+        <span className="custom-select-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="m8.5 7.5 3.5 5 3.5-5" />
+            <path d="M9 13h6" />
+            <path d="M9 16h6" />
+            <path d="M12 12.5V18" />
+          </svg>
+        </span>
+
+        <span>{budget || '请选择预算范围'}</span>
+      </span>
+
+      <svg
+        className="custom-select-chevron"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="m7 10 5 5 5-5" />
+      </svg>
+    </button>
+
+    <input type="hidden" name="budget" value={budget} />
+
+    {budgetOpen && (
+      <div className="custom-select-menu" role="listbox">
+        {[
+          '¥100 以下',
+          '¥100～299',
+          '¥300～599',
+          '¥600 以上',
+          '暂时不确定',
+        ].map((option) => (
+          <button
+            key={option}
+            type="button"
+            className={`custom-select-option ${
+              budget === option ? 'is-selected' : ''
+            }`}
+            onClick={() => {
+              setBudget(option)
+              setBudgetOpen(false)
+            }}
+          >
+            <span>{option}</span>
+
+            {budget === option && (
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 4 4L19 6" />
+              </svg>
+            )}
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+</label>
+              
 
           <button
             className="submit-button"
             type="submit"
-            disabled={isSubmitting}
+            disabled={isSubmitting || !budget}
           >
             {isSubmitting ? '提交中...' : '提交需求'}
           </button>
@@ -575,22 +683,85 @@ async function handleSubmit(e) {
       </div>
 
       <aside className="contact-side">
+        <div className="contact-side-plane">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M8 27 56 8 38 56 29 35 8 27Z" />
+    <path d="M29 35 56 8" />
+  </svg>
+</div>
         <p className="contact-side-title">
           也可以直接联系我们
         </p>
 
         <div className="contact-item">
-          <div className="contact-icon">✉</div>
+  <div className="contact-icon">✉</div>
 
-          <div>
-            <strong>邮箱</strong>
-            <p>
-              <a href="mailto:launchpagestudio@163.com">
-                launchpagestudio@163.com
-              </a>
-            </p>
-          </div>
-        </div>
+  <div className="contact-email-content">
+    <strong>邮箱</strong>
+
+    <a href="mailto:launchpagestudio@163.com">
+      launchpagestudio@163.com
+    </a>
+  </div>
+
+  <button
+    type="button"
+    className="contact-copy-button"
+    onClick={() => {
+      navigator.clipboard.writeText('launchpagestudio@163.com')
+    }}
+    title="复制邮箱"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="9" y="9" width="11" height="11" rx="2" />
+      <path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3" />
+    </svg>
+  </button>
+</div>
+        <div className="contact-trust-list">
+
+  <div className="contact-trust-item">
+    <div className="trust-icon trust-blue">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M13 2 5 14h6l-1 8 8-12h-6l1-8Z" />
+  </svg>
+</div>
+    <div>
+      <strong>快速回复</strong>
+      <p>通常 1 个工作日内回复</p>
+    </div>
+  </div>
+
+  <div className="contact-trust-item">
+    <div className="trust-icon trust-green">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="9" />
+    <path d="m8.5 7.5 3.5 5 3.5-5" />
+    <path d="M9 13h6" />
+    <path d="M9 16h6" />
+    <path d="M12 12.5V18" />
+  </svg>
+</div>
+    <div>
+      <strong>费用透明</strong>
+      <p>先沟通需求，再确认方案和大概费用</p>
+    </div>
+  </div>
+
+  <div className="contact-trust-item">
+    <div className="trust-icon trust-purple">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+</div>
+    <div>
+      <strong>专业支持</strong>
+      <p>从需求到上线，全程提供建议与支持</p>
+    </div>
+  </div>
+
+</div>
       </aside>
 
     </div>
