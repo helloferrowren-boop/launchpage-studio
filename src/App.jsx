@@ -475,52 +475,58 @@ async function handleSubmit(e) {
         </div>
 
         <form
-          className="contact-form"
-          onSubmit={handleSubmit}
-        >
-          {selectedPlan && (
-            <label>
-              已选择套餐
-              <input
-                type="text"
-                name="plan"
-                value={selectedPlan}
-                readOnly
-              />
-            </label>
-          )}
+  className="contact-form"
+  onSubmit={handleSubmit}
+>
+  {selectedPlan && (
+    <label>
+      已选择套餐
+      <input
+        type="text"
+        name="plan"
+        value={selectedPlan}
+        readOnly
+      />
+    </label>
+  )}
 
-          <div className="form-row">
-            <label>
-              姓名
-              <input
-                type="text"
-                name="name"
-                placeholder="例如：张三"
-                required
-              />
-            </label>
+  <div className="form-row">
+    <label>
+      姓名
+      <input
+        type="text"
+        name="name"
+        placeholder="例如：张三"
+        required
+      />
+    </label>
 
-            <label>
-              联系方式
-              <input
-                type="text"
-                name="contact"
-                placeholder="微信 / QQ / 邮箱"
-                required
-              />
-            </label>
-          </div>
+    <label>
+      手机号或邮箱
+      <input
+        type="text"
+        name="contact"
+        placeholder="例如：13800138000 或 name@example.com"
+        pattern="(?:1[3-9][0-9]{9}|[^@ ]+@[^@ ]+[.][^@ ]+)"
+        title="请输入正确的中国大陆手机号（11位）或邮箱地址"
+        required
+      />
+    </label>
+  </div>
+          
+
+          
 
           <label>
-            想做什么
-            <textarea
-              name="request"
-              rows="5"
-              placeholder="例如：我想做一个展示摄影作品的个人网站……"
-              required
-            />
-          </label>
+  想做什么
+  <textarea
+    name="request"
+    rows="5"
+    minLength="10"
+    placeholder="例如：我想做一个展示摄影作品的个人网站……"
+    required
+  />
+</label>
 
           <label>
             预算
