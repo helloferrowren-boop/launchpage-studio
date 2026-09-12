@@ -266,6 +266,42 @@ function PhotographyDemo() {
             </div>
           </div>
         </section>
+        <section className="photo-sales-cta">
+  <div className="photo-container">
+    <div className="photo-sales-card">
+      <div>
+        <p className="photo-sales-label">
+          LAUNCHPAGE STUDIO · DEMO
+        </p>
+
+        <h2>
+          喜欢这种风格？
+          <br />
+          可以做成属于你的网站。
+        </h2>
+
+        <p className="photo-sales-copy">
+          这是一套摄影网站演示案例。
+          可以根据你的照片、品牌、服务内容和联系方式进行定制。
+        </p>
+
+        <div className="photo-sales-price">
+          标准展示官网 <strong>¥499 起</strong>
+        </div>
+      </div>
+
+      <div className="photo-sales-actions">
+        <a href="/#pricing" className="photo-sales-primary">
+          查看建站方案
+        </a>
+
+        <a href="/?plan=standard#contact" className="photo-sales-secondary">
+          提交需求 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       </main>
 
       <footer className="photo-footer">

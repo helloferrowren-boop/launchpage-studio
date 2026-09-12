@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
@@ -8,6 +8,35 @@ const [selectedPlan, setSelectedPlan] = useState('')
 const [requestText, setRequestText] = useState('')
 const [budget, setBudget] = useState('')
 const [budgetOpen, setBudgetOpen] = useState(false)
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search)
+  const plan = params.get('plan')
+
+  const planMap = {
+    personal: '个人展示页 ¥199 起',
+    standard: '标准展示官网 ¥499 起',
+    brand: '品牌展示官网 ¥899 起',
+  }
+
+  if (plan && planMap[plan]) {
+    setSelectedPlan(planMap[plan])
+  }
+
+  const hash = window.location.hash
+
+  if (!hash) return
+
+  const timer = setTimeout(() => {
+    const target = document.querySelector(hash)
+
+    target?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }, 150)
+
+  return () => clearTimeout(timer)
+}, [])
 
 async function handleSubmit(e) {
   e.preventDefault()
@@ -28,11 +57,14 @@ async function handleSubmit(e) {
     })
 
     if (response.ok) {
-      setFormStatus('success')
-      form.reset()
-      setBudget('')
-setBudgetOpen(false)
-    } else {
+  setFormStatus('success')
+  form.reset()
+
+  setRequestText('')
+  setBudget('')
+  setBudgetOpen(false)
+  setSelectedPlan('')
+} else {
       setFormStatus('error')
     }
   } catch {
@@ -318,8 +350,11 @@ setBudgetOpen(false)
   <div className="container">
     <div className="section-heading cases-heading">
       <div>
-        <h2>Demo 案例</h2>
-        <p>这里展示的是演示作品，用来让你了解我们能做出的效果。</p>
+        <h2>看看你的网站可以做成什么样</h2>
+<p>
+  以下均为演示项目，不是真实客户案例。
+  选择与你需求接近的风格，进入查看完整效果。
+</p>
       </div>
 
       <span className="demo-label">DEMO / 演示案例</span>
@@ -357,8 +392,11 @@ setBudgetOpen(false)
 
         <div className="case-info">
           <div>
-            <h3>程序员作品集</h3>
-            <p>展示个人介绍、技能、项目经历和联系方式。</p>
+            <h3>程序员个人主页 / 开发者作品集</h3>
+<p>
+  适合程序员、软件工程学生和独立开发者，
+  展示项目、技术栈、经历和联系方式。
+</p>
           </div>
 
           <span className="case-arrow">→</span>
@@ -393,8 +431,11 @@ setBudgetOpen(false)
 
         <div className="case-info">
           <div>
-            <h3>摄影工作室</h3>
-            <p>用于展示摄影作品、服务内容和预约联系方式。</p>
+            <h3>摄影师作品集 / 摄影工作室官网</h3>
+<p>
+  适合摄影师和摄影工作室，
+  用于展示作品、拍摄服务、品牌风格和预约方式。
+</p>
           </div>
 
           <span className="case-arrow">→</span>
@@ -432,8 +473,11 @@ setBudgetOpen(false)
 
         <div className="case-info">
           <div>
-            <h3>个人主页</h3>
-            <p>适合学生、设计师、创作者建立自己的个人网站。</p>
+            <h3>个人主页 / 个人品牌作品集</h3>
+<p>
+  适合学生、设计师、创作者和自由职业者，
+  集中展示个人介绍、作品、经历和联系方式。
+</p>
           </div>
 
           <span className="case-arrow">→</span>
@@ -798,12 +842,13 @@ setBudgetOpen(false)
     {budgetOpen && (
       <div className="custom-select-menu" role="listbox">
         {[
-          '¥100 以下',
-          '¥100～299',
-          '¥300～599',
-          '¥600 以上',
-          '暂时不确定',
-        ].map((option) => (
+  '¥200 以内',
+  '¥200～499',
+  '¥500～899',
+  '¥900～1499',
+  '¥1500 以上',
+  '暂时不确定',
+].map((option) => (
           <button
             key={option}
             type="button"

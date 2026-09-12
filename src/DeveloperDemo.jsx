@@ -221,6 +221,42 @@ developer.create()
             </div>
           </div>
         </section>
+        <section className="dev-sales-cta">
+  <div className="dev-container">
+    <div className="dev-sales-card">
+      <div>
+        <p className="dev-sales-label">
+          LAUNCHPAGE STUDIO · DEMO
+        </p>
+
+        <h2>
+          想要这样的程序员个人主页？
+          <br />
+          可以按你的经历和项目定制。
+        </h2>
+
+        <p className="dev-sales-copy">
+          这是一套开发者个人主页演示案例。
+          可以替换成你的个人介绍、技术栈、项目经历、GitHub 和联系方式。
+        </p>
+
+        <div className="dev-sales-price">
+          个人展示页 <strong>¥199 起</strong>
+        </div>
+      </div>
+
+      <div className="dev-sales-actions">
+        <a href="/#pricing" className="dev-sales-primary">
+          查看建站方案
+        </a>
+
+        <a href="/?plan=personal#contact" className="dev-sales-secondary">
+          提交需求 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       </main>
 
       <footer className="dev-footer">

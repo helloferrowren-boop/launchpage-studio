@@ -334,6 +334,42 @@ function ProfileDemo() {
           </div>
 
         </section>
+        <section className="profile-sales-cta">
+  <div className="profile-container">
+    <div className="profile-sales-card">
+      <div>
+        <p className="profile-sales-label">
+          LAUNCHPAGE STUDIO · DEMO
+        </p>
+
+        <h2>
+          想要一个更有个人风格的网站？
+          <br />
+          可以按你的内容进行定制。
+        </h2>
+
+        <p className="profile-sales-copy">
+          这是一套个人品牌 / 作品集网站演示案例。
+          可以替换成你的个人介绍、作品、经历、服务和联系方式。
+        </p>
+
+        <div className="profile-sales-price">
+          个人展示页 <strong>¥199 起</strong>
+        </div>
+      </div>
+
+      <div className="profile-sales-actions">
+        <a href="/#pricing" className="profile-sales-primary">
+          查看建站方案
+        </a>
+
+        <a href="/?plan=personal#contact" className="profile-sales-secondary">
+          提交需求 →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       </main>
