@@ -308,7 +308,10 @@ async function handleSubmit(e) {
       </a>
 
 
-      <article className="case-card">
+      <a
+  className="case-card case-link"
+  href="/photography-demo"
+>
         <div className="case-preview photo-preview">
           <div className="case-mini-nav dark">
             <span>Lens Studio</span>
@@ -338,10 +341,13 @@ async function handleSubmit(e) {
 
           <span className="case-arrow">→</span>
         </div>
-      </article>
+      </a>
 
 
-      <article className="case-card">
+      <a
+  className="case-card case-link"
+  href="/profile-demo"
+>
         <div className="case-preview personal-preview">
           <div className="case-mini-nav">
             <span>小林</span>
@@ -374,7 +380,7 @@ async function handleSubmit(e) {
 
           <span className="case-arrow">→</span>
         </div>
-      </article>
+      </a>
 
     </div>
   </div>
