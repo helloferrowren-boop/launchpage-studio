@@ -1,7 +1,21 @@
-import './DeveloperDemo.css'
+import { useEffect } from "react";
+import "./DeveloperDemo.css";
 
 function DeveloperDemo() {
+
+  useEffect(() => {
+    document.title = "程序员个人主页制作｜开发者作品集网站 Demo - LaunchPage Studio";
+
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        "程序员个人主页和开发者作品集网站 Demo，展示项目经历、技术栈、GitHub 和个人介绍。"
+      );
+  }, []);
+
   return (
+  
     <div className="dev-demo">
       <header className="dev-nav">
         <div className="dev-container dev-nav-inner">

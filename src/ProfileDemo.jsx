@@ -1,6 +1,17 @@
+import { useEffect } from "react";
 import './ProfileDemo.css'
 
 function ProfileDemo() {
+  useEffect(() => {
+  document.title = "个人主页制作｜个人品牌作品集网站 Demo - LaunchPage Studio";
+
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute(
+      "content",
+      "个人主页和个人品牌作品集网站 Demo，适合学生、设计师、创作者展示经历和作品。"
+    );
+}, []);
   return (
     <div className="profile-demo">
 

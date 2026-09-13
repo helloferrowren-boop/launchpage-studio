@@ -1,6 +1,17 @@
+import { useEffect } from "react";
 import './PhotographyDemo.css'
 
 function PhotographyDemo() {
+  useEffect(() => {
+  document.title = "摄影师作品集网站｜摄影工作室官网 Demo - LaunchPage Studio";
+
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute(
+      "content",
+      "摄影师作品集网站和摄影工作室官网 Demo，适合展示作品、服务内容和品牌风格。"
+    );
+}, []);
   return (
     <div className="photo-demo">
       <header className="photo-nav">
