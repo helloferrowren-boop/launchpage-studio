@@ -2,6 +2,32 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+ useEffect(() => {
+  const elements = document.querySelectorAll(".animate");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+
+      });
+    },
+    {
+  threshold: 0.15,
+  rootMargin: "0px 0px -120px 0px",
+}
+  );
+
+  elements.forEach((el) => observer.observe(el));
+
+  return () => observer.disconnect();
+
+}, []);
   const [formStatus, setFormStatus] = useState('')
 const [isSubmitting, setIsSubmitting] = useState(false)
 const [selectedPlan, setSelectedPlan] = useState('')
@@ -107,29 +133,35 @@ async function handleSubmit(e) {
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <div className="badge">用网站，让更多人看到你</div>
+              <div className="badge">
+  LaunchPage Studio · 网站制作服务
+</div>
 
-              <h1>
-                把你的想法，
-                <br />
-                做成<span>能访问的网站</span>
-              </h1>
+<h1>
+  为个人创作者与小型品牌
+  <br />
+  打造<span>专业展示网站</span>
+</h1>
 
-              <p className="hero-subtitle">
-  个人展示页 ¥199 起 · 标准展示官网 ¥499 起
+<p className="hero-subtitle">
+  从设计、开发到部署上线，一站式完成
 </p>
 
-              <p className="hero-description">
-  个人主页、作品集、小型官网、网站修改与上线，都可以联系我们。
+<p className="hero-description">
+  适用于个人主页、作品集、摄影展示、工作室官网。
+  <br />
+  响应式适配 · 快速上线 · 支持后续修改
 </p>
+
+              
 
               <div className="hero-actions">
-                <a className="primary-button" href="#services">
-  查看服务 →
+                <a className="primary-button" href="#cases">
+  查看案例 →
 </a>
 
 <a className="secondary-button" href="#contact">
-  提交需求
+  获取报价
 </a>
               </div>
 
@@ -183,51 +215,8 @@ async function handleSubmit(e) {
           </div>
         </section>
 
-        <section className="services" id="services">
-          <div className="container">
-            <div className="section-heading">
-              <h2>我们能帮你做什么</h2>
-              <p>从个人到小团队，提供简单、专业、可靠的网站服务。</p>
-            </div>
-
-            <div className="service-grid">
-              <article className="service-card">
-                <div className="service-icon">👤</div>
-                <h3>个人展示页 / 作品集</h3>
-<div className="price">¥199 <small>起</small></div>
-<div className="pricing-result">
-  交付一个可直接访问的完整个人网站
-</div>
-                <p>适合学生、程序员、摄影师、设计师</p>
-              </article>
-
-              <article className="service-card">
-                <div className="service-icon green">▣</div>
-                <h3>标准展示官网</h3>
-<div className="price">¥499 <small>起</small></div>
-<div className="pricing-result">
-  交付一个可用于正式对外展示的完整官网
-</div>
-                <p>适合工作室、小商家、个人品牌</p>
-              </article>
-
-              <article className="service-card">
-  <div className="service-icon purple">&lt;/&gt;</div>
-
-  <h3>网站修改 / GitHub 项目维护</h3>
-
-  <div className="price">
-    ¥99 <small>起</small>
-  </div>
-
-  <p>
-    前端样式、小功能、Bug 修复、构建与部署排错
-  </p>
-</article>
-            </div>
-          </div>
-        </section>
-        <section className="pricing-section" id="pricing">
+        
+        <section className="pricing fade-up" id="pricing">
   <div className="container">
     <div className="section-heading">
       <h2>套餐价格</h2>
@@ -346,7 +335,7 @@ async function handleSubmit(e) {
 </div>
   </div>
 </section>
-<section className="cases-section" id="cases">
+<section className="cases-section fade-up" id="cases">
   <div className="container">
     <div className="section-heading cases-heading">
       <div>
@@ -397,6 +386,11 @@ async function handleSubmit(e) {
   适合程序员、软件工程学生和独立开发者，
   展示项目、技术栈、经历和联系方式。
 </p>
+<div className="case-tags">
+  <span>React</span>
+  <span>响应式</span>
+  <span>作品展示</span>
+</div>
           </div>
 
           <span className="case-arrow">→</span>
@@ -436,6 +430,11 @@ async function handleSubmit(e) {
   适合摄影师和摄影工作室，
   用于展示作品、拍摄服务、品牌风格和预约方式。
 </p>
+<div className="case-tags">
+  <span>图片展示</span>
+  <span>作品集设计</span>
+  <span>移动适配</span>
+</div>
           </div>
 
           <span className="case-arrow">→</span>
@@ -478,6 +477,11 @@ async function handleSubmit(e) {
   适合学生、设计师、创作者和自由职业者，
   集中展示个人介绍、作品、经历和联系方式。
 </p>
+<div className="case-tags">
+  <span>个人品牌</span>
+  <span>信息展示</span>
+  <span>快速部署</span>
+</div>
           </div>
 
           <span className="case-arrow">→</span>
@@ -539,7 +543,7 @@ async function handleSubmit(e) {
     </div>
   </div>
 </section>
-<section className="faq-section" id="faq">
+<section className="faq fade-up" id="faq">
   <div className="container">
     <div className="section-heading">
       <h2>常见问题</h2>
@@ -686,7 +690,7 @@ async function handleSubmit(e) {
     </div>
   </div>
 </section>
-<section className="contact-section" id="contact">
+<section className="contact-section fade-up" id="contact">
   <div className="container">
     <div className="contact-box">
 
@@ -931,6 +935,30 @@ async function handleSubmit(e) {
       <rect x="9" y="9" width="11" height="11" rx="2" />
       <path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3" />
     </svg>
+  </button>
+</div>
+
+
+<div className="contact-item">
+  <div className="contact-icon">💬</div>
+
+  <div className="contact-email-content">
+    <strong>微信</strong>
+
+    <span>duty0629</span>
+  </div>
+
+  
+
+      <button
+    type="button"
+    className="contact-copy-button"
+    onClick={() => {
+      navigator.clipboard.writeText('duty0629')
+    }}
+    title="复制微信号"
+  >
+    复制
   </button>
 </div>
         <div className="contact-trust-list">
