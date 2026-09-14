@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
+const PLAN_MAP = {
+  personal: '个人展示页 ¥199 起',
+  standard: '标准展示官网 ¥499 起',
+  brand: '品牌展示官网 ¥899 起',
+}
+
 function App() {
  useEffect(() => {
   const elements = document.querySelectorAll(".animate");
@@ -30,24 +36,15 @@ function App() {
 }, []);
   const [formStatus, setFormStatus] = useState('')
 const [isSubmitting, setIsSubmitting] = useState(false)
-const [selectedPlan, setSelectedPlan] = useState('')
+const [selectedPlan, setSelectedPlan] = useState(() => {
+  const plan = new URLSearchParams(window.location.search).get('plan')
+
+  return PLAN_MAP[plan] ?? ''
+})
 const [requestText, setRequestText] = useState('')
 const [budget, setBudget] = useState('')
 const [budgetOpen, setBudgetOpen] = useState(false)
 useEffect(() => {
-  const params = new URLSearchParams(window.location.search)
-  const plan = params.get('plan')
-
-  const planMap = {
-    personal: '个人展示页 ¥199 起',
-    standard: '标准展示官网 ¥499 起',
-    brand: '品牌展示官网 ¥899 起',
-  }
-
-  if (plan && planMap[plan]) {
-    setSelectedPlan(planMap[plan])
-  }
-
   const hash = window.location.hash
 
   if (!hash) return
@@ -215,8 +212,45 @@ async function handleSubmit(e) {
           </div>
         </section>
 
-        
-        <section className="pricing fade-up" id="pricing">
+        <section className="services fade-up animate" id="services">
+          <div className="container">
+            <div className="section-heading">
+              <h2>我们能帮你做什么</h2>
+              <p>从个人到小团队，提供简单、专业、可靠的网站服务。</p>
+            </div>
+
+            <div className="service-grid">
+              <article className="service-card">
+                <div className="service-icon">👤</div>
+                <h3>个人展示页 / 作品集</h3>
+                <div className="price">¥199 <small>起</small></div>
+                <div className="pricing-result">
+                  交付一个可直接访问的完整个人网站
+                </div>
+                <p>适合学生、程序员、摄影师、设计师</p>
+              </article>
+
+              <article className="service-card">
+                <div className="service-icon green">▣</div>
+                <h3>标准展示官网</h3>
+                <div className="price">¥499 <small>起</small></div>
+                <div className="pricing-result">
+                  交付一个可用于正式对外展示的完整官网
+                </div>
+                <p>适合工作室、小商家、个人品牌</p>
+              </article>
+
+              <article className="service-card">
+                <div className="service-icon purple">&lt;/&gt;</div>
+                <h3>网站修改 / GitHub 项目维护</h3>
+                <div className="price">¥99 <small>起</small></div>
+                <p>前端样式、小功能、Bug 修复、构建与部署排错</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="pricing fade-up animate" id="pricing">
   <div className="container">
     <div className="section-heading">
       <h2>套餐价格</h2>
@@ -335,7 +369,7 @@ async function handleSubmit(e) {
 </div>
   </div>
 </section>
-<section className="cases-section fade-up" id="cases">
+<section className="cases-section fade-up animate" id="cases">
   <div className="container">
     <div className="section-heading cases-heading">
       <div>
@@ -690,7 +724,7 @@ async function handleSubmit(e) {
     </div>
   </div>
 </section>
-<section className="contact-section fade-up" id="contact">
+<section className="contact-section fade-up animate" id="contact">
   <div className="container">
     <div className="contact-box">
 

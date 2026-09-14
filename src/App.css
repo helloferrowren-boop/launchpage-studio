@@ -371,10 +371,6 @@
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    letter-spacing: -2px;
-  }
-
   .service-grid {
     grid-template-columns: 1fr;
   }
@@ -490,9 +486,6 @@
 }
 
 @media (max-width: 850px) {
-  .hero {
-  padding: 25px 0 10px;
-}
   .pricing-grid {
     display: flex;
     overflow-x: auto;
@@ -1217,9 +1210,9 @@
 }
 @media (max-width: 850px) {
   .hero h1 {
-  font-size: 42px;
-  line-height: 1.15;
-}
+    font-size: 36px;
+    line-height: 1.2;
+  }
   .hero-preview {
 
   display: none;
@@ -1234,14 +1227,6 @@
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 0;
-  }
-
-  
-
-  .hero h1 {
-    font-size: 43px;
-    line-height: 1.12;
-    letter-spacing: -2px;
   }
 
   .hero-subtitle {
@@ -1272,7 +1257,7 @@
   }
 
   .hero {
-    padding: 42px 0 45px;
+    padding: 50px 0 10px;
   }
 
   .hero-trust {
@@ -2175,44 +2160,17 @@
     padding: 70px 0;
   }
 }
-/* 页面滚动进入动画 */
-
 .fade-up.animate {
-
   opacity: 0;
-
   transform: translateY(30px);
-
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
-
 }
-
-
-.fade-up.animate {
-
-  opacity: 0;
-
-  transform: translateY(30px);
-
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-
-}
-
 
 .fade-up.animate.show {
-
   opacity: 1;
-
   transform: translateY(0);
-
-}
-
-.test-space {
-  margin-top: 300px;
 }
 .case-tags {
   display: flex;
